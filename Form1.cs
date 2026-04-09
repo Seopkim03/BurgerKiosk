@@ -55,7 +55,7 @@ namespace BurgerKiosk
                 totalCost -= 5000;
                 lstOrder.Items.Remove("햄버거 5,000원");
             }
-            UpdateTotalLabel(); // 변경된 금액 반영
+            UpdateTotalLabel(); // 변경된 금액 반영 
         }
 
         private void rdoBulgogi_CheckedChanged(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace BurgerKiosk
                 totalCost -= 4000;
                 lstOrder.Items.Remove("불고기버거 4,000원");
             }
-            UpdateTotalLabel(); // 변경된 금액 반영
+            UpdateTotalLabel(); // 변경된 금액 반영 
         }
 
         private void rdoChicken_CheckedChanged(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace BurgerKiosk
                 totalCost -= 3000;
                 lstOrder.Items.Remove("치킨버거 3,000원");
             }
-            UpdateTotalLabel(); // 변경된 금액 반영
+            UpdateTotalLabel(); // 변경된 금액 반영 
         }
 
         private void chkChips_CheckedChanged(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace BurgerKiosk
                 totalCost -= 3500;
                 lstOrder.Items.Remove("감자튀김 3,500원");
             }
-            UpdateTotalLabel(); // 변경된 금액 반영
+            UpdateTotalLabel(); // 변경된 금액 반영 
         }
 
         private void chkCoke_CheckedChanged(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace BurgerKiosk
                 totalCost -= 2500;
                 lstOrder.Items.Remove("콜라 2,500원");
             }
-            UpdateTotalLabel(); // 변경된 금액 반영
+            UpdateTotalLabel(); // 변경된 금액 반영 
         }
 
         private void chkCheese_CheckedChanged(object sender, EventArgs e)
@@ -130,7 +130,7 @@ namespace BurgerKiosk
                 totalCost -= 1500;
                 lstOrder.Items.Remove("치즈 추가 1,500원");
             }
-            UpdateTotalLabel(); // 변경된 금액 반영
+            UpdateTotalLabel(); // 변경된 금액 반영 
         }
 
         private void chkSauce_CheckedChanged(object sender, EventArgs e)
@@ -150,26 +150,75 @@ namespace BurgerKiosk
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            /*
             if (!rdoChicken.Checked && !rdoBulgogi.Checked && !rdoBurger.Checked)
             {
                 lblTotal.Text = "메뉴를 선택해주세요.";
                 return;
             }
             else {
-                MessageBox.Show("주문이 완료되었습니다.", "주문 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblTotal.Text = $"총 금액 : {totalCost:N0}원";
+                if (rdoBurger.Checked)
+                {
+                    totalCost += 5000;
+                    lstOrder.Items.Add("햄버거 : 5,000원");
+                }
+                else if (rdoBulgogi.Checked)
+                {
+                    totalCost += 4000;
+                    lstOrder.Items.Add("불고기버거 : 4,000원");
+                }
+                else if (rdoChicken.Checked)
+                {
+                    totalCost += 3000;
+                    lstOrder.Items.Add("치킨버거 : 3,000원");
+                }
 
-                rdoBurger.Checked = false;
-                rdoBulgogi.Checked = false;
-                rdoChicken.Checked = false;
-                chkChips.Checked = false;
-                chkCoke.Checked = false;
-                chkCheese.Checked = false;
-                chkSauce.Checked = false;
-                lstOrder.Items.Clear();
+                // 3. 사이드 메뉴(CheckBox) 확인
+                if (chkChips.Checked)
+                {
+                    totalCost += 3500;
+                    lstOrder.Items.Add("감자튀김 : 3,500원");
+                }
+                if (chkCoke.Checked)
+                {
+                    totalCost += 2500;
+                    lstOrder.Items.Add("콜라 : 2,500원");
+                }
+               if (chkCheese.Checked)
+                {
+                    totalCost += 1500;
+                    lstOrder.Items.Add("치즈 추가 : 1,500원");
+                }
+               if (chkSauce.Checked)
+                {
+                    totalCost += 500;
+                    lstOrder.Items.Add("소스 추가 : 500원");
+                }
 
-                totalCost = 0; // 금액 변수도 초기화
-                UpdateTotalLabel(); // 라벨 갱신
-            }
+                // 4. 최종 결과 출력
+                if (totalCost == 0)
+                {
+                    MessageBox.Show("메뉴를 먼저 선택해주세요!");
+                }
+                else
+                {
+                    lblTotal.Text = $"총 금액 : {totalCost:N0}원";
+                }*/
+            MessageBox.Show("주문이 완료되었습니다.", "주문 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            rdoBurger.Checked = false;
+            rdoBulgogi.Checked = false;
+            rdoChicken.Checked = false;
+            chkChips.Checked = false;
+            chkCoke.Checked = false;
+            chkCheese.Checked = false;
+            chkSauce.Checked = false;
+            lstOrder.Items.Clear();
+
+            totalCost = 0; // 금액 변수도 초기화
+            UpdateTotalLabel(); // 라벨 갱신
+                
         }
     }
 }
