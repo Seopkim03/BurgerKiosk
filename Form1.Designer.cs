@@ -62,7 +62,7 @@
             lblAppName.Location = new Point(12, 9);
             lblAppName.Name = "lblAppName";
             lblAppName.Size = new Size(502, 83);
-            lblAppName.TabIndex = 0;
+            lblAppName.TabIndex = 2;
             lblAppName.Text = "버거 주문 키오스크";
             // 
             // rdoBurger
@@ -196,7 +196,7 @@
             grpMenu.Location = new Point(21, 95);
             grpMenu.Name = "grpMenu";
             grpMenu.Size = new Size(372, 354);
-            grpMenu.TabIndex = 1;
+            grpMenu.TabIndex = 3;
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴 선택";
             // 
@@ -210,7 +210,7 @@
             grpAdditional.Location = new Point(411, 95);
             grpAdditional.Name = "grpAdditional";
             grpAdditional.Size = new Size(146, 354);
-            grpAdditional.TabIndex = 2;
+            grpAdditional.TabIndex = 4;
             grpAdditional.TabStop = false;
             grpAdditional.Text = "추가 메뉴";
             // 
@@ -222,7 +222,7 @@
             grpTotal.Location = new Point(594, 95);
             grpTotal.Name = "grpTotal";
             grpTotal.Size = new Size(271, 319);
-            grpTotal.TabIndex = 3;
+            grpTotal.TabIndex = 5;
             grpTotal.TabStop = false;
             grpTotal.Text = "주문 내역";
             // 
@@ -251,9 +251,10 @@
             btnOrder.Location = new Point(594, 420);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(127, 46);
-            btnOrder.TabIndex = 4;
+            btnOrder.TabIndex = 0;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
+            btnOrder.Click += btnOrder_Click;
             // 
             // btnReset
             // 
@@ -263,7 +264,7 @@
             btnReset.Location = new Point(738, 420);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(127, 46);
-            btnReset.TabIndex = 5;
+            btnReset.TabIndex = 1;
             btnReset.Text = "초기화";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;

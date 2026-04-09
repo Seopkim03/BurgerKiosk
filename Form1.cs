@@ -147,5 +147,29 @@ namespace BurgerKiosk
             }
             UpdateTotalLabel(); // 변경된 금액 반영
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (!rdoChicken.Checked && !rdoBulgogi.Checked && !rdoBurger.Checked)
+            {
+                lblTotal.Text = "메뉴를 선택해주세요.";
+                return;
+            }
+            else {
+                MessageBox.Show("주문이 완료되었습니다.", "주문 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                rdoBurger.Checked = false;
+                rdoBulgogi.Checked = false;
+                rdoChicken.Checked = false;
+                chkChips.Checked = false;
+                chkCoke.Checked = false;
+                chkCheese.Checked = false;
+                chkSauce.Checked = false;
+                lstOrder.Items.Clear();
+
+                totalCost = 0; // 금액 변수도 초기화
+                UpdateTotalLabel(); // 라벨 갱신
+            }
+        }
     }
-    }
+}
