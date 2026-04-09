@@ -27,4 +27,12 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\김현섭\source\repos\BurgerKiosk\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\김현섭\source\repos\BurgerKiosk\.editorconfig" />
+  </ItemGroup>
+
 </Project>
